@@ -12,5 +12,8 @@
     "dialogflow"
   ],
   "author": "Diego Martins (diego.benweide@gmail.com)",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
 }
