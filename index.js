@@ -9,7 +9,7 @@ app.get('/', (req,res) => {
     res.send("Olá Chatbot");
 })
 
-app.get('/pergunta', (req, res) => {
+app.get('/pedido', (req, res) => {
     console.log(req.query);
     res.send("Qual a sua pergunta?");
 })
@@ -17,7 +17,20 @@ app.get('/pergunta', (req, res) => {
 
 app.post('/pedido', (req, res) => {
     console.log(req.body);
-    res.send("pedido recebido");
+    const produto = req.body.produto;
+    const tamanho = req.body.tamanho;
+    const sabor = req.body.sabor;
+    const pg = req.body.formaPagamento;
+    const nome = req.body.nome;
+
+    const pedido = {
+        produto,
+        tamanho,
+        sabor,
+        pg,
+        nome,
+    }
+    res.json(pedido);
 });
 
 
